@@ -1,3 +1,14 @@
+package pt.ipleiria.ead.ei22;
+
+/*
+*Classe Utilizador, os utilizadores são criados pelo gestor da empresa
+*
+* Intent: Guardar o Nome de Utilizador, Verificar a Hash da password com a
+* password inserida na interface, utilizado BCrypt.
+*
+*
+* */
+
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 public class User {
@@ -10,7 +21,6 @@ public class User {
         this.username = username;
         this.passwordHash = encoder.encode(password);
     }
-
 
     //? USER GETTERS
     public String getUsername() {
