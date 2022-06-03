@@ -1,9 +1,12 @@
-package pt.ipleiria.ead.ei22;
+package pt.ipleiria.model;
 
+import java.awt.*;
 import java.util.Date;
+import java.util.HashMap;
 
 public class Vehicle {
 
+    private Boolean inOurProcession;
     private String brand;
     private String model;
     private String licensePlate;

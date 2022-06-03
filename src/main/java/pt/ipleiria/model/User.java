@@ -1,4 +1,4 @@
-package pt.ipleiria.ead.ei22;
+package pt.ipleiria.model;
 
 /*
 *Classe Utilizador, os utilizadores são criados pelo gestor da empresa
@@ -13,11 +13,12 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 public class User {
 
-    private String username;
-    private String passwordHash;
+    private final String username;
+    private final String passwordHash;
+
     private static final BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 
-    public User(String username, String password) {
+    public User(String username, CharSequence password) {
         this.username = username;
         this.passwordHash = encoder.encode(password);
     }
@@ -28,8 +29,8 @@ public class User {
     }
 
     //? HASHING
-    public boolean isMatchingPassword(String password) {
-        return encoder.matches(password, passwordHash);
+    public boolean isMatchingPassword( CharSequence rawPassword) {
+        return encoder.matches(rawPassword, passwordHash);
     }
 }
 
