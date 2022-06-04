@@ -1,5 +1,6 @@
 package pt.ipleiria.model;
 
+import pt.ipleiria.managers.ClientManager;
 import pt.ipleiria.managers.UserManager;
 import pt.ipleiria.views.LoginView;
 

@@ -9,7 +9,7 @@ import java.util.Objects;
 public class ClientManager {
     LinkedList<Client> clients = new LinkedList<>();
 
-    private void addClient(Client client) {
+    public void addClient(Client client) {
         if (getClient(client.getNif()) == null) clients.add(client);
     }
 
@@ -20,9 +20,13 @@ public class ClientManager {
         return null;
     }
 
-    public LinkedList<Client> seedClients(int numClients){
+    public void seedClients(int numClients){
         for (int i = 1; i <= numClients; i++) {
-            
+            String name = "Cliente" + i;
+            int nif = 258000000 + i;
+            int phoneNumber = 910000000 + i;
+
+            addClient(new Client(name, nif, phoneNumber));
         }
     }
 }
