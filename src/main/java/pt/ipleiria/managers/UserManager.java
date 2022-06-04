@@ -9,10 +9,10 @@ public class UserManager {
     LinkedList<User> users = new LinkedList<>();
 
     public UserManager() {
-        createUsers();
+        seedUsers();
     }
 
-    private void createUsers() {
+    private void seedUsers() {
         users.add(new User("miguel", "12345"));
         users.add(new User("jonas", "12345"));
         users.add(new User("jose", "12345"));

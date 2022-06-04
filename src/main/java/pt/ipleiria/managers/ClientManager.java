@@ -1,6 +1,7 @@
 package pt.ipleiria.managers;
 
 import pt.ipleiria.model.Client;
+import pt.ipleiria.model.Main;
 import pt.ipleiria.model.User;
 import java.util.LinkedList;
 import java.util.Objects;
@@ -24,5 +25,4 @@ public class ClientManager {
             
         }
     }
-
 }
