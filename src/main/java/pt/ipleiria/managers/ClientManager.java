@@ -29,4 +29,9 @@ public class ClientManager {
             addClient(new Client(name, nif, phoneNumber));
         }
     }
+
+    public Client getRandomClient(){ //Todo Só para testes ou seeder de veiculos, esta função devia ser privada
+        return clients.get((int)(Math.random() * clients.size()));
+    }
+
 }

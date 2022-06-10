@@ -35,4 +35,13 @@ public class Client {
     public void setPhoneNumber(int phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
+
+    @Override
+    public String toString() {
+        return "Client{" +
+                "name='" + name + '\'' +
+                ", nif=" + nif +
+                ", phoneNumber=" + phoneNumber +
+                '}';
+    }
 }

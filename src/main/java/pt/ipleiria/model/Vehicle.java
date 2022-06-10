@@ -6,12 +6,13 @@ import java.util.HashMap;
 
 public class Vehicle {
 
-    private Boolean inOurProcession;
+    private Boolean inOurPosession;
     private String brand;
     private String model;
     private String licensePlate;
     private int kilometers;
-    private int price;
+    private String vin;
+    private float price;
     private String color;
     private int year;
     private int nmrOwners;
@@ -19,13 +20,15 @@ public class Vehicle {
     private Client lastOwner;
 
 
-    public Vehicle(String brand, String model, String licensePlate, int kilometers, int price, String color, int year
+    public Vehicle(Boolean inOurPosession, String brand, String model, String licensePlate, int kilometers, float price, String vin, String color, int year
             , int nmrOwners, Client lastOwner, Date lastInspectionDate) {
+        this.inOurPosession = inOurPosession;
         this.brand = brand;
         this.model = model;
         this.licensePlate = licensePlate;
         this.kilometers = kilometers;
         this.price = price;
+        this.vin = vin;
         this.color = color;
         this.year = year;
         this.nmrOwners = nmrOwners;
@@ -64,7 +67,7 @@ public class Vehicle {
     public void setKilometers(int kilometers) {
         this.kilometers = kilometers;
     }
-    public int getPrice() {
+    public float getPrice() {
         return price;
     }
     public void setPrice(int price) {
@@ -93,5 +96,30 @@ public class Vehicle {
     }
     public void setLastOwner(Client lastOwner) {
         this.lastOwner = lastOwner;
+    }
+
+    public String getVin() {
+        return vin;
+    }
+
+    public void setVin(String vin) {
+        this.vin = vin;
+    }
+
+    public void printVehicle() {
+        System.out.printf("\nVehicle{" +
+                "inOurPosession=" + inOurPosession +
+                ", brand='" + brand + '\'' +
+                ", model='" + model + '\'' +
+                ", licensePlate='" + licensePlate + '\'' +
+                ", kilometers=" + kilometers +
+                ", vin='" + vin + '\'' +
+                ", price=" + price +
+                ", color='" + color + '\'' +
+                ", year=" + year +
+                ", nmrOwners=" + nmrOwners +
+                ", lastInspectionDate=" + lastInspectionDate +
+                ", lastOwner=" + lastOwner.toString() +
+                "}\n");
     }
 }
