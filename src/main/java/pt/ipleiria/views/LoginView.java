@@ -78,8 +78,8 @@ public class LoginView extends JFrame
                 UserManager userManager = new UserManager();
                 var request = userManager.verifyUser(usernameLabel.getText(), password);
                 JOptionPane.showMessageDialog(null, request );
-                //dispose();
-                //new DashBoardView(null).setVisible(true);
+                dispose();
+                new DashBoardView(null).setVisible(true);
             }
         });
         passField.addKeyListener(new KeyAdapter() {public void keyPressed(KeyEvent e) {if (passField.getPassword().length > 0) { passFieldDefaultText.setText(null); }

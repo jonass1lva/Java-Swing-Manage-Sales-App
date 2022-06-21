@@ -7,7 +7,7 @@ public class Branch {
     private final String name;
     private String location;
     private LinkedList<Part> parts;
-    //Se fizermos a lista de carros por filial então fazer aqui a lista de carros
+    // Se fizermos a lista de carros por filial então fazer aqui a lista de carros
 
     public Branch(String name, String location) {
         this.name = name;
@@ -48,7 +48,6 @@ public class Branch {
         }
         return null;
     }
-
 
     //TODO falta popular como os users, e fazer os metodos para criar as partes e atualizar todas ao mesmo tempo e assim
 }

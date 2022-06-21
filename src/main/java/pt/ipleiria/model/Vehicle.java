@@ -71,10 +71,10 @@ public class Vehicle {
     public void setKilometers(int kilometers) {
         this.kilometers = kilometers;
     }
-    public float getPrice() {
+    public float getSiteValue() {
         return siteValue;
     }
-    public void setPrice(int siteValue) {
+    public void setSiteValue(int siteValue) {
         this.siteValue = siteValue;
     }
     public String getColor() {
