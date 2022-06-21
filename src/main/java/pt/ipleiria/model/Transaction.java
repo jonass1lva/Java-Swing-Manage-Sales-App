@@ -4,4 +4,6 @@ import java.util.Date;
 
 public abstract class Transaction {
     private Date date;
+    private double value;
+    private String vin;
 }
