@@ -8,18 +8,15 @@ import java.util.Objects;
 
 public class ClientManager {
     LinkedList<Client> clients = new LinkedList<>();
-
     public void addClient(Client client) {
         if (getClient(client.getNif()) == null) clients.add(client);
     }
-
     public Client getClient(int nif) {
         for( Client client: this.clients){
             if (client.getNif() == nif) return client;
         }
         return null;
     }
-
     public void seedClients(int numClients){
         for (int i = 1; i <= numClients; i++) {
             String name = "Cliente" + i;
@@ -29,9 +26,7 @@ public class ClientManager {
             addClient(new Client(name, nif, phoneNumber));
         }
     }
-
     public Client getRandomClient(){ //Todo Só para testes ou seeder de veiculos, esta função devia ser privada
         return clients.get((int)(Math.random() * clients.size()));
     }
-
 }
