@@ -1,5 +1,6 @@
 package pt.ipleiria.managers;
 
+import pt.ipleiria.model.CarCondition;
 import pt.ipleiria.model.Client;
 import pt.ipleiria.model.Vehicle;
 
@@ -52,9 +53,10 @@ public class VehicleManager {
             long ms = -946771200000L + ((long)(Math.random() % (70L * 365 * 24 * 60 * 60 * 1000)));
             Date lastInspectionDate = new Date() ;
 
+            CarCondition condition = CarCondition.GOOD;
 
             addVehicle(new Vehicle(inOurPosession, brand, model, licensePlate, kilometers, price, vin.toString(), color, year
-            , nmrOwners, lastOwner, lastInspectionDate));
+            , nmrOwners, lastOwner, lastInspectionDate, condition));
 
         }
     }
