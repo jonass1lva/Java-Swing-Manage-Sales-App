@@ -1,8 +1,6 @@
 package pt.ipleiria.model;
 
-import java.awt.*;
 import java.util.Date;
-import java.util.HashMap;
 
 public class Vehicle {
 
@@ -12,7 +10,7 @@ public class Vehicle {
     private String licensePlate;
     private int kilometers;
     private String vin;
-    private float price;
+    private float siteValue;
     private String color;
     private int year;
     private int nmrOwners;
@@ -20,14 +18,14 @@ public class Vehicle {
     private Client lastOwner;
 
 
-    public Vehicle(Boolean inOurPosession, String brand, String model, String licensePlate, int kilometers, float price, String vin, String color, int year
+    public Vehicle(Boolean inOurPosession, String brand, String model, String licensePlate, int kilometers, float siteValue, String vin, String color, int year
             , int nmrOwners, Client lastOwner, Date lastInspectionDate) {
         this.inOurPosession = inOurPosession;
         this.brand = brand;
         this.model = model;
         this.licensePlate = licensePlate;
         this.kilometers = kilometers;
-        this.price = price;
+        this.siteValue = siteValue;
         this.vin = vin;
         this.color = color;
         this.year = year;
@@ -67,11 +65,11 @@ public class Vehicle {
     public void setKilometers(int kilometers) {
         this.kilometers = kilometers;
     }
-    public float getPrice() {
-        return price;
+    public float getSiteValue() {
+        return siteValue;
     }
-    public void setPrice(int price) {
-        this.price = price;
+    public void setSiteValue(int siteValue) {
+        this.siteValue = siteValue;
     }
     public String getColor() {
         return color;
@@ -114,7 +112,7 @@ public class Vehicle {
                 ", licensePlate='" + licensePlate + '\'' +
                 ", kilometers=" + kilometers +
                 ", vin='" + vin + '\'' +
-                ", price=" + price +
+                ", price=" + siteValue +
                 ", color='" + color + '\'' +
                 ", year=" + year +
                 ", nmrOwners=" + nmrOwners +
