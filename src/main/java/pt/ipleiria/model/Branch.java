@@ -7,8 +7,8 @@ public class Branch {
     private String tipo;
     private final String name;
     private String location;
-    private LinkedList<Part> parts;
-    // Se fizermos a lista de carros por filial então fazer aqui a lista de carros
+    private LinkedList<Part> partsList;
+    private LinkedList<Vehicle> vehiclesList;
 
     public Branch(String name, String location) {
         this.name = name;
@@ -28,11 +28,11 @@ public class Branch {
     }
 
     public LinkedList<Part> getParts() {
-        return parts;
+        return partsList;
     }
 
     public void registerPartToBranch(Part part){
-        parts.add(part);
+        partsList.add(part);
     }
 
     public void useParts(int partRef, int quantity){
@@ -44,11 +44,23 @@ public class Branch {
     }
 
     public Part getPart(int reference) {
-        for( Part part: this.parts){
+        for( Part part: this.partsList){
             if (part.getReference() == reference) return part;
         }
         return null;
     }
 
-    //TODO falta popular como os users, e fazer os metodos para criar as partes e atualizar todas ao mesmo tempo e assim
+    public String getTipo() {
+        return tipo;
+    }
+
+    public LinkedList<Part> getPartsList() {
+        return partsList;
+    }
+
+    public LinkedList<Vehicle> getVehiclesList() {
+        return vehiclesList;
+    }
+
+//TODO falta popular como os users, e fazer os metodos para criar as partes e atualizar todas ao mesmo tempo e assim
 }
