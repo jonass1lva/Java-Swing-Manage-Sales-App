@@ -12,7 +12,9 @@ public class Vehicle {
     private String licensePlate;
     private int kilometers;
     private String vin;
-    private float price;
+    private float siteValue;
+    private CarCondition condition;
+    private double value;
     private String color;
     private int year;
     private int nmrOwners;
@@ -20,20 +22,22 @@ public class Vehicle {
     private Client lastOwner;
 
 
-    public Vehicle(Boolean inOurPosession, String brand, String model, String licensePlate, int kilometers, float price, String vin, String color, int year
-            , int nmrOwners, Client lastOwner, Date lastInspectionDate) {
+    public Vehicle(Boolean inOurPosession, String brand, String model, String licensePlate, int kilometers, float siteValue, String vin, String color, int year
+            , int nmrOwners, Client lastOwner, Date lastInspectionDate, CarCondition condition) {
         this.inOurPosession = inOurPosession;
         this.brand = brand;
         this.model = model;
         this.licensePlate = licensePlate;
         this.kilometers = kilometers;
-        this.price = price;
+        this.siteValue = siteValue;
+        this.condition = condition;
         this.vin = vin;
         this.color = color;
         this.year = year;
         this.nmrOwners = nmrOwners;
         this.lastOwner = lastOwner;
         this.lastInspectionDate = lastInspectionDate;
+        this.value = siteValue * condition.getValueMultiplier();
     }
 
     //? Getter & Setters
@@ -68,10 +72,10 @@ public class Vehicle {
         this.kilometers = kilometers;
     }
     public float getPrice() {
-        return price;
+        return siteValue;
     }
-    public void setPrice(int price) {
-        this.price = price;
+    public void setPrice(int siteValue) {
+        this.siteValue = siteValue;
     }
     public String getColor() {
         return color;
@@ -114,7 +118,9 @@ public class Vehicle {
                 ", licensePlate='" + licensePlate + '\'' +
                 ", kilometers=" + kilometers +
                 ", vin='" + vin + '\'' +
-                ", price=" + price +
+                ", siteValue=" + siteValue +
+                ", Condition=" + condition +
+                ", value=" + value +
                 ", color='" + color + '\'' +
                 ", year=" + year +
                 ", nmrOwners=" + nmrOwners +
