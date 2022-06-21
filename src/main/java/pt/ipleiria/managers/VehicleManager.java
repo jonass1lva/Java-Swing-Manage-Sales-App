@@ -25,7 +25,7 @@ public class VehicleManager {
         for (int i = 1; i <= numVehicles; i++) {
 
             String []brands = {"Mercedes", "Volvo", "Volkswagen", "Audi", "Pegeut", "Citroen", "Fiat", "Renault"};
-            String []models = {"Benz", "Class A", "V40", "V60", "C40", "Golf", "Polo", "A4", "A5", "R8", "TT", "206", "208", "C3", "C4", "Punto", "500", "Quadra", "Clio"};
+            String []models = {"Benz", "Class A", "V40", "V60", "C40", "Golf", "Polo", "A4", "A5", "R8", "TT", "206", "208","C2", "C3", "C4", "Punto", "500", "Quadra", "Clio"};
             String []colors = {"Branco", "Preto", "Cinza", "Prateado", "Vermelho", "Azul", "Castanho", "Verde", "Beje", "Laranja", "Dourado", "Amarelo", "Roxo"};
 
             Boolean inOurPosession = i%2==0;
