@@ -1,6 +1,7 @@
 package pt.ipleiria.views;
 
 import pt.ipleiria.ViewManagers.*;
+import pt.ipleiria.model.Storage;
 import pt.ipleiria.model.User;
 
 import javax.swing.*;
@@ -79,7 +80,6 @@ public class DashBoardView extends JFrame
     private void InitCustomOptionsPanel(JPanel panel, String selection ){
         var firstYBg = 95;
         var firstYLabel = 112;
-
         if ("Gestão de Veículo".equals(selection) || selection == null) {
             var options = uImodels.getGestaoVeiculosOptions();
             for (String option: options) {
