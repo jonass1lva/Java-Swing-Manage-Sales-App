@@ -34,14 +34,24 @@ public class Event {
         this.local = local;
     }
 
-
     public Date getInitialDate() {
         return initialDate;
     }
 
-    public void setinitialDate(Date initialDate) {
+
+    public void setInitialDate(Date initialDate) {
         this.initialDate = initialDate;
     }
 
+    public Date getFinaldate() {
+        return finaldate;
+    }
 
+    public void setFinaldate(Date finaldate) {
+        this.finaldate = finaldate;
+    }
+
+    public LinkedList<Vehicle> getVehicleList() {
+        return vehicleList;
+    }
 }

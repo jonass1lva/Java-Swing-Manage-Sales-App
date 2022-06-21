@@ -1,13 +1,11 @@
 package pt.ipleiria.model;
 
 public class Part {
-    private final String designation;
     private final int reference;
     private final String description;
     private int stock;
 
     public Part(String designation, int reference, String description) {
-        this.designation = designation;
         this.reference = reference;
         this.description = description;
         this.stock = 0;
@@ -32,10 +30,6 @@ public class Part {
         return -1;
     }
 
-    public String getDesignation() {
-        return designation;
-    }
-
     public int getReference() {
         return reference;
     }
@@ -43,5 +37,7 @@ public class Part {
     public String getDescription() {
         return description;
     }
+
+
 
 }

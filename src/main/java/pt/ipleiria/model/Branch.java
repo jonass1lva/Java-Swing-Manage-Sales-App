@@ -4,6 +4,7 @@ import java.util.LinkedList;
 
 public class Branch {
 
+    private String tipo;
     private final String name;
     private String location;
     private LinkedList<Part> parts;
