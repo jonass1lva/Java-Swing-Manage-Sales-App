@@ -119,7 +119,7 @@ public class Vehicle {
                 ", year=" + year +
                 ", nmrOwners=" + nmrOwners +
                 ", lastInspectionDate=" + lastInspectionDate +
-                ", lastOwner=" + lastOwner.toString() +
+                ", LastOwner=" + lastOwner.toString() +
                 "}\n");
     }
 }
