@@ -1,6 +1,8 @@
 package pt.ipleiria.model;
 
+import java.awt.*;
 import java.util.Date;
+import java.util.HashMap;
 
 public class Vehicle {
 
@@ -11,6 +13,8 @@ public class Vehicle {
     private int kilometers;
     private String vin;
     private float siteValue;
+    private CarCondition condition;
+    private double value;
     private String color;
     private int year;
     private int nmrOwners;
@@ -19,19 +23,21 @@ public class Vehicle {
 
 
     public Vehicle(Boolean inOurPosession, String brand, String model, String licensePlate, int kilometers, float siteValue, String vin, String color, int year
-            , int nmrOwners, Client lastOwner, Date lastInspectionDate) {
+            , int nmrOwners, Client lastOwner, Date lastInspectionDate, CarCondition condition) {
         this.inOurPosession = inOurPosession;
         this.brand = brand;
         this.model = model;
         this.licensePlate = licensePlate;
         this.kilometers = kilometers;
         this.siteValue = siteValue;
+        this.condition = condition;
         this.vin = vin;
         this.color = color;
         this.year = year;
         this.nmrOwners = nmrOwners;
         this.lastOwner = lastOwner;
         this.lastInspectionDate = lastInspectionDate;
+        this.value = siteValue * condition.getValueMultiplier();
     }
 
     //? Getter & Setters
@@ -112,7 +118,9 @@ public class Vehicle {
                 ", licensePlate='" + licensePlate + '\'' +
                 ", kilometers=" + kilometers +
                 ", vin='" + vin + '\'' +
-                ", price=" + siteValue +
+                ", siteValue=" + siteValue +
+                ", Condition=" + condition +
+                ", value=" + value +
                 ", color='" + color + '\'' +
                 ", year=" + year +
                 ", nmrOwners=" + nmrOwners +
