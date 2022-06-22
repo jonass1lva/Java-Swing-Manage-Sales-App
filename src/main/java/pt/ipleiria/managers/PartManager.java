@@ -20,6 +20,7 @@ public class PartManager {
         }
         return null;
     }
+
     public LinkedList<Part> getRegisteredParts() {
         return registeredParts;
     }

@@ -50,8 +50,8 @@ public class VehicleManager {
             int nmrOwners = i%5;
             Client lastOwner = clients.getRandomClient();
 
-            long ms = -946771200000L + ((long)(Math.random() % (70L * 365 * 24 * 60 * 60 * 1000)));
-            Date lastInspectionDate = new Date() ;
+            //long ms = -946771200000L + ((long)(Math.random() % (70L * 365 * 24 * 60 * 60 * 1000)));
+            Date lastInspectionDate = new Date() ;//acho que aqui era para usar o ms mas devo de me ter esquecido por isso comentei o ms tambem e já se vê que data é que está a pôr
 
             CarCondition condition = CarCondition.GOOD;
 
