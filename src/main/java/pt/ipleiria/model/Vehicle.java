@@ -110,6 +110,25 @@ public class Vehicle {
         this.vin = vin;
     }
 
+    public CarCondition getCondition() {
+        return condition;
+    }
+
+    public double getValue() {
+        return value;
+    }
+
+    public void setSiteValue(float siteValue) {
+        this.siteValue = siteValue;
+        this.value = siteValue * condition.getValueMultiplier();
+    }
+
+    public void setCondition(CarCondition condition) {
+        this.condition = condition;
+        this.value = siteValue * condition.getValueMultiplier();
+    }
+
+
     public void printVehicle() {
         System.out.printf("\nVehicle{" +
                 "inOurPosession=" + inOurPosession +
