@@ -65,7 +65,10 @@ public class DashBoardView extends JFrame
                 48,24,
                 colorManager.getColor("AccentBackgroundColor"), 48,24,297,110, false);
 
+        var authenticateButton = viewManager.CreateButton("Autenticar",230,380,230,50,13,colorManager.getColor("DarkText"),colorManager.getColor("LightBackground"));
+
         panel.add(title);
+        panel.add(authenticateButton);
         panel.add(usernameTitle);
         panel.add(companyName);
         panel.add(transactionTitle);
