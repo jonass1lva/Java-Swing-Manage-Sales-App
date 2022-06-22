@@ -45,7 +45,7 @@ public class UImodels {
         GestaoClientesOptions.add("Eliminar Cliente");
         GestaoClientesOptions.add("Mostrar Histórico Cliente");
         GestaoClientesOptions.add("Clientes com Maior Venda");
-        GestaoClientesOptions.add("Registar Venda");
+
 
         return new LinkedList<>(GestaoClientesOptions);
     }
