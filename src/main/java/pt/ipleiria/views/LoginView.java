@@ -33,18 +33,23 @@ public class LoginView extends JFrame
         var panel = viewManager.CreateJpanel(460,430,colorManager.getColor("BackgroundColor"));
         var title = viewManager.CreateLabel("Início de Sessão", 23,"Inter Medium",colorManager.getColor("DarkText"),460,50,0,20, false, true);
 
-        var subtitle = viewManager.CreateLabel("Faz login na tua conta de utilizador para acessar",13, "Inter " + "Regular", colorManager.getColor( "GreyText"),460,50,0,57,false, true);
+        var subtitle = viewManager.CreateLabel("Faça login para ter acesso",13, "Inter " + "Regular", colorManager.getColor( "GreyText"),460,50,0,57,false, true);
 
-        var subtitleBottom = viewManager.CreateLabel("a nossa plataforma",13, "Inter Regular", colorManager.getColor("GreyText"), 460,50,0,75, false, true);
+        var subtitleBottom = viewManager.CreateLabel("à nossa plataforma",13, "Inter Regular", colorManager.getColor("GreyText"), 460,50,0,75, false, true);
 
-        var loginButton = viewManager.CreateButtonWithImage("src/resources/user.png",75,75,colorManager.getColor("AccentBackgroundColor"),460,75,0,160, true);
+        var loginButton = viewManager.CreateButtonWithImage("src/resources/user.png",75,75,colorManager.getColor("AccentBackgroundColor"),460,75,0,125, true);
 
-        var usernameLabel = viewManager.CreateTextField("JonasSilva_0284",15,13,colorManager.getColor("DarkText"),colorManager.getColor("BackgroundColor"),0,225,460,50,true);
+        var usernameFieldDefaultText = viewManager.CreateLabel("Username",13, "Inter Light",
+                colorManager.getColor("GreyText"),250,35,140,225,false,false);
+
+        var usernameField = viewManager.CreateTextField(null,15,13,colorManager.getColor("DarkText"),colorManager.getColor("LightBackground"),120,225,220,35,false);
+
+        usernameField.setBorder(BorderFactory.createCompoundBorder(usernameField.getBorder(),BorderFactory.createEmptyBorder(5, 10, 5, 5)));
 
         var showPasswordIcn = viewManager.CreateButtonWithImage("src/resources/eye-96.png",16,16,null,16,96,310,250,true);
 
         var passFieldDefaultText = viewManager.CreateLabel("Password",13, "Inter Light",
-                colorManager.getColor("GreyText"),460,35,132,280,false,false);
+                colorManager.getColor("GreyText"),250,35,140,280,false,false);
 
         var passField = viewManager.CreatePasswordField(null, 13,colorManager.getColor("DarkText"), colorManager.getColor("LightBackground"), 120, 280, 220,35, false);
 
@@ -57,7 +62,8 @@ public class LoginView extends JFrame
         panel.add(subtitle);
         panel.add(subtitleBottom);
         panel.add(loginButton);
-        panel.add(usernameLabel);
+        panel.add(usernameFieldDefaultText);
+        panel.add(usernameField);
         panel.add(showPasswordIcn);
         panel.add(passFieldDefaultText);
         panel.add(passField);
@@ -76,7 +82,7 @@ public class LoginView extends JFrame
                 /* reference: https://stackoverflow.com/questions/299606/java-convert-a-char-to-a-charsequence */
                 CharSequence password = java.nio.CharBuffer.wrap(passField.getPassword());
                 UserManager userManager = new UserManager();
-                var request = userManager.verifyUser(usernameLabel.getText(), password);
+                var request = userManager.verifyUser(usernameField.getText(), password);
                 JOptionPane.showMessageDialog(null, request );
                 dispose();
                 new DashBoardView(null).setVisible(true);
