@@ -121,6 +121,37 @@ public class DashBoardView extends JFrame
 
                     }
                 });
+                optionBtn.addActionListener(new ActionListener()
+                {
+                    public void actionPerformed(ActionEvent e) {
+                        switch (option){
+                            case "Adicionar Veículo":
+                                dispose();
+                                new AddVehicleView().setVisible(true);
+                                break;
+                            case "Alterar Veículo":
+                                dispose();
+                                new ChangeVehicleView().setVisible(true);
+                                break;
+                            case "Eliminar Veículo":
+                                dispose();
+                                new DeleteVehicleView().setVisible(true);
+                                break;
+                            case "Transferir Veículo":
+                                dispose();
+                                new TransferVehicleView().setVisible(true);
+                                break;
+                            case "Registar Compra": //todo se calhar a compra e venda é a mesma merda mas passar um atributo lá para dentro
+                                dispose();
+                                new RegisterPurchaseView().setVisible(true);
+                                break;
+                            case "Registar Venda":
+                                dispose();
+                                new RegisterSaleView().setVisible(true);
+                                break;
+                        }
+                    }
+                });
             }
         }
         if ("Gestão de Peças".equals(selection)) {

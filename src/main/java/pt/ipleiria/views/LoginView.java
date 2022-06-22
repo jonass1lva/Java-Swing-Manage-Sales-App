@@ -3,6 +3,7 @@ package pt.ipleiria.views;
 import pt.ipleiria.ViewManagers.ColorManager;
 import pt.ipleiria.ViewManagers.FontManager;
 import pt.ipleiria.ViewManagers.ViewManager;
+import pt.ipleiria.model.Storage;
 import pt.ipleiria.model.User;
 import pt.ipleiria.managers.UserManager;
 
@@ -81,8 +82,8 @@ public class LoginView extends JFrame
             public void actionPerformed(ActionEvent e) {
                 /* reference: https://stackoverflow.com/questions/299606/java-convert-a-char-to-a-charsequence */
                 CharSequence password = java.nio.CharBuffer.wrap(passField.getPassword());
-                UserManager userManager = new UserManager();
-                var request = userManager.verifyUser(usernameField.getText(), password);
+                if (usernameField.getText().isEmpty() || password.isEmpty()) return;
+                var request = Storage.getInstance().getUserManager().verifyUser(usernameField.getText(), password);
                 JOptionPane.showMessageDialog(null, request );
                 dispose();
                 new DashBoardView(null).setVisible(true);
