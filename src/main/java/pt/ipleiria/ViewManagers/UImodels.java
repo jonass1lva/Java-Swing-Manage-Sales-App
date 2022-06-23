@@ -7,11 +7,8 @@ public class UImodels {
     public LinkedList<String> getGestaoVeiculosOptions() {
         var GestaoVeiculosOptions = new LinkedList<String>();
         GestaoVeiculosOptions.add("Adicionar Veículo");
-        GestaoVeiculosOptions.add("Alterar Veículo");
-        GestaoVeiculosOptions.add("Eliminar Veículo");
-        GestaoVeiculosOptions.add("Transferir Veículo");
-        GestaoVeiculosOptions.add("Registar Compra");
-        GestaoVeiculosOptions.add("Registar Venda");
+        GestaoVeiculosOptions.add("Ficha Veículo");
+        GestaoVeiculosOptions.add("Registar Transação");
 
         return new LinkedList<>(GestaoVeiculosOptions);
     }
@@ -19,19 +16,17 @@ public class UImodels {
     public LinkedList<String> getGestaoPeçasOptions() {
         var GestaoPeçasOptions = new LinkedList<String>();
         GestaoPeçasOptions.add("Adicionar Peça");
-        GestaoPeçasOptions.add("Alterar Peça");
+        GestaoPeçasOptions.add("Ficha Peça");
         GestaoPeçasOptions.add("Registar uso de Peça Manutenção");
         GestaoPeçasOptions.add("Registar Aquisição de Peça");
         GestaoPeçasOptions.add("Transferir Peça");
-        GestaoPeçasOptions.add("Gastos de Manutenção Carro");
         return new LinkedList<>(GestaoPeçasOptions);
     }
 
     public LinkedList<String> getGestaoEventosOptions() {
         var GestaoEventosOptions = new LinkedList<String>();
         GestaoEventosOptions.add("Adicionar Evento");
-        GestaoEventosOptions.add("Alterar Evento");
-        GestaoEventosOptions.add("Cancelar Evento ");
+        GestaoEventosOptions.add("Visualizar Evento");
         GestaoEventosOptions.add("Mostrar Vendas por Evento ");
         GestaoEventosOptions.add("Filiais com mais Vendas");
 
@@ -41,8 +36,7 @@ public class UImodels {
     public LinkedList<String> getGestaoClientesOptions() {
         var GestaoClientesOptions = new LinkedList<String>();
         GestaoClientesOptions.add("Adicionar Cliente");
-        GestaoClientesOptions.add("Alterar Cliente");
-        GestaoClientesOptions.add("Eliminar Cliente");
+        GestaoClientesOptions.add("Ficha Cliente");
         GestaoClientesOptions.add("Mostrar Histórico Cliente");
         GestaoClientesOptions.add("Clientes com Maior Venda");
 
