@@ -3,6 +3,8 @@ package pt.ipleiria.managers;
 import pt.ipleiria.model.Client;
 import pt.ipleiria.model.Main;
 import pt.ipleiria.model.User;
+import pt.ipleiria.model.Vehicle;
+
 import java.util.LinkedList;
 import java.util.Objects;
 
@@ -29,4 +31,15 @@ public class ClientManager {
     public Client getRandomClient(){ //Todo Só para testes ou seeder de veiculos, esta função devia ser privada
         return clients.get((int)(Math.random() * clients.size()));
     }
+    public LinkedList<Client> getClients() {
+        return clients;
+    }
+    public void printClientes() {
+        String stringBuilder = "";
+        for (Client cliente : clients) {
+            stringBuilder = stringBuilder + cliente.toString();
+        }
+        System.out.printf(stringBuilder);
+    }
+
 }

@@ -83,12 +83,12 @@ public class DeleteClientView extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 /* reference: https://stackoverflow.com/questions/299606/java-convert-a-char-to-a-charsequence */
                 if (clienteField.getText().isEmpty()) return;
-                if (Storage.getInstance().getClientManager().getClient(0) == null) {
+                if (Storage.getInstance().getClientManager().getClient(Integer.parseInt(clienteField.getText())) == null) {
                     JOptionPane.showMessageDialog(null, "Cliente não registado");
                     return;
                 } else {
-                    Storage.getInstance().getVehicleManager().deleteVehicle(clienteField.getText());
-                    JOptionPane.showMessageDialog(null, "Cliente apagado");
+                    //Storage.getInstance().getClientManager().deleteClien(clienteField.getText());
+                    JOptionPane.showMessageDialog(null, "Cliente apagado só que nao porque nao esta implementado");
 
                     dispose();
                     new DashBoardView(null).setVisible(true);

@@ -92,6 +92,9 @@ public class DeleteVehicleView extends JFrame {
 
                     dispose();
                     new DashBoardView(null).setVisible(true);
+
+                    //todo tirar isto
+                    Storage.getInstance().getVehicleManager().printVehicles();
                 }
             }
         });

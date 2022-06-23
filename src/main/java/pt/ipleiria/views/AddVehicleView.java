@@ -4,11 +4,14 @@ import pt.ipleiria.ViewManagers.ColorManager;
 import pt.ipleiria.ViewManagers.FontManager;
 import pt.ipleiria.ViewManagers.UImodels;
 import pt.ipleiria.ViewManagers.ViewManager;
+import pt.ipleiria.model.CarCondition;
 import pt.ipleiria.model.Storage;
+import pt.ipleiria.model.Vehicle;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Date;
 
 public class AddVehicleView  extends JFrame {
 
@@ -125,10 +128,10 @@ public class AddVehicleView  extends JFrame {
 
         var cancelButton = viewManager.CreateButton("Cancelar",120,595,230,50,13,colorManager.getColor("DarkText"),colorManager.getColor("LightBackground"));
 
-        var deleteButton = viewManager.CreateButton("Gravar",360,595,230,50,13,colorManager.getColor("DarkText"),colorManager.getColor("LightBackground"));
+        var gravarButton = viewManager.CreateButton("Gravar",360,595,230,50,13,colorManager.getColor("DarkText"),colorManager.getColor("LightBackground"));
 
         panel.add(cancelButton);
-        panel.add(deleteButton);
+        panel.add(gravarButton);
         panel.add(title);
         panel.add(logoutButton);
         panel.add(usernameTitle);
@@ -163,10 +166,19 @@ public class AddVehicleView  extends JFrame {
                 new DashBoardView(null).setVisible(true);
             }
         });
-        deleteButton.addActionListener(new ActionListener()
+        gravarButton.addActionListener(new ActionListener()
         {
             public void actionPerformed(ActionEvent e) {
-                /* reference: https://stackoverflow.com/questions/299606/java-convert-a-char-to-a-charsequence */
+                /* reference: https://stackoverflow.com/questions/299606/java-convert-a-char-to-a-charsequence *///todo há aqui coisas como o nmr de owners e o cliente e etc que nao fazem muito sentido
+
+                Storage.getInstance().getVehicleManager().addVehicle(new Vehicle(false, brandField.getText(), modelField.getText(),licensePlateFieldD.getText(),
+                        Integer.parseInt(kilometersField.getText()), (float)((Math.random() * (50000 - 1000)) + 1000), vinField.getText(), colorField.getText(),
+                        Integer.parseInt(yearField.getText()), 0, Storage.getInstance().getClientManager().getRandomClient(), new Date(), CarCondition.ACCEPTABLE));
+                JOptionPane.showMessageDialog(null, "Registado com sucesso" );
+
+
+                //todo tirar isto
+                Storage.getInstance().getVehicleManager().printVehicles();
 
             }
         });
