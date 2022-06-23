@@ -25,6 +25,8 @@ public class UserManager {
     }
     public boolean verifyUser(String username, CharSequence rawPassword) {
         //TODO: Null pointer exception on wrong credentials
-        return Objects.requireNonNull(getUser(username)).isMatchingPassword(rawPassword);
+        User user = getUser(username);
+        if (user==null)return false;
+        return (getUser(username)).isMatchingPassword(rawPassword);
     }
  }

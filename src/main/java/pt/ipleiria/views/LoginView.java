@@ -84,7 +84,11 @@ public class LoginView extends JFrame
                 CharSequence password = java.nio.CharBuffer.wrap(passField.getPassword());
                 if (usernameField.getText().isEmpty() || password.isEmpty()) return;
                 var request = Storage.getInstance().getUserManager().verifyUser(usernameField.getText(), password);
-                JOptionPane.showMessageDialog(null, request );
+                if (!request){
+                    JOptionPane.showMessageDialog(null, "Credênciais Erradas" );
+                    return;
+                }
+
                 dispose();
                 new DashBoardView(null).setVisible(true);
             }

@@ -66,4 +66,12 @@ public class VehicleManager {
             vehicle.printVehicle();
         }
     }
+
+    public void deleteVehicle(String vin) {
+        Vehicle vehicle = getVehicle(vin);
+        vehicles.remove(vehicle);
+
+        //todo tirar isto
+        printVehicles();
+    }
 }

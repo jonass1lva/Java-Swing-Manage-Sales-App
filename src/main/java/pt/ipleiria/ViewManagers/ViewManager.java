@@ -135,7 +135,7 @@ public class ViewManager {
         button.setForeground(color);
         button.setBackground(background);
         button.setBorderPainted(true);
-        button.setFocusPainted(true);
+        button.setFocusPainted(false);//mudei isto para false
         button.setContentAreaFilled(false);
         button.setOpaque(true);
         button.setBorder(null);
