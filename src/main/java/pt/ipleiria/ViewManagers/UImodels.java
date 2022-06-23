@@ -18,7 +18,7 @@ public class UImodels {
 
     public LinkedList<String> getGestaoPeçasOptions() {
         var GestaoPeçasOptions = new LinkedList<String>();
-        GestaoPeçasOptions.add("Registar novas Peças");
+        GestaoPeçasOptions.add("Adicionar Peça");
         GestaoPeçasOptions.add("Alterar Peça");
         GestaoPeçasOptions.add("Registar uso de Peça Manutenção");
         GestaoPeçasOptions.add("Registar Aquisição de Peça");

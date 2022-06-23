@@ -167,7 +167,23 @@ public class DashBoardView extends JFrame {
                 panel.add(optionBtn);
                 firstYBg = firstYBg + 103;
                 firstYLabel = firstYLabel + 103;
+
+                optionBtn.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        switch (option) {
+                            case "Adicionar Peça":
+                                dispose();
+                                new AddPartView().setVisible(true);
+                                break;
+                            case "Alterar Peça":
+                                dispose();
+                                new ChangePartView().setVisible(true);
+                                break;
+                        }
+                    }
+                });
             }
+
         }
         if ("Gestão de Eventos".equals(selection)) {
             var options = uImodels.getGestaoEventosOptions();
@@ -216,6 +232,25 @@ public class DashBoardView extends JFrame {
                 panel.add(optionBtn);
                 firstYBg = firstYBg + 103;
                 firstYLabel = firstYLabel + 103;
+
+                optionBtn.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        switch (option) {
+                            case "Adicionar Cliente":
+                                dispose();
+                                new AddClientView().setVisible(true);
+                                break;
+                            case "Alterar Cliente":
+                                dispose();
+                                new ChangeClientView().setVisible(true);
+                                break;
+                            case "Eliminar Cliente":
+                                dispose();
+                                new DeleteClientView().setVisible(true);
+                                break;
+                        }
+                    }
+                });
             }
         }
     }
