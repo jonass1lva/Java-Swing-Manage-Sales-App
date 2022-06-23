@@ -9,8 +9,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class DashBoardView extends JFrame
-{
+public class DashBoardView extends JFrame {
     FontManager fontManager;
     ColorManager colorManager;
     ViewManager viewManager;
@@ -22,16 +21,15 @@ public class DashBoardView extends JFrame
     public DashBoardView(String selection) {
         uImodels = new UImodels();
         fontManager = FontManager.getInstance();
-        colorManager = ColorManager.getInstance() ;
+        colorManager = ColorManager.getInstance();
         viewManager = new ViewManager();
         this.selection = selection;
         InitUI();
     }
 
-    private void InitUI()
-    {
-        viewManager.CreateView(this,830,750);
-        var panel = viewManager.CreateJpanel(830,750,colorManager.getColor("BackgroundColor"));
+    private void InitUI() {
+        viewManager.CreateView(this, 830, 750);
+        var panel = viewManager.CreateJpanel(830, 750, colorManager.getColor("BackgroundColor"));
         add(panel);
         InitMainPanel(panel);
         InitCustomOptions(panel);
@@ -40,32 +38,32 @@ public class DashBoardView extends JFrame
     }
 
     private void InitMainPanel(JPanel panel) {
-        var title = viewManager.CreateLabel("Bem Vindo",22,"Inter Light", colorManager.getColor("DarkText"),830,50,30,20,false,
+        var title = viewManager.CreateLabel("Bem Vindo", 22, "Inter Light", colorManager.getColor("DarkText"), 830, 50, 30, 20, false,
                 false);
-        var currentOptionTitle = viewManager.CreateLabel("Gestão de Veículos",22,"Inter Light", colorManager.getColor("DarkText"), 830, 50,410,20, false, false);
+        var currentOptionTitle = viewManager.CreateLabel("Gestão de Veículos", 22, "Inter Light", colorManager.getColor("DarkText"), 830, 50, 410, 20, false, false);
 
-        var buttonLogout = viewManager.CreateButton("Logout",610,20, 830, 50, 50,colorManager.getColor("DarkText"),colorManager.getColor("DarkText"));
+        var buttonLogout = viewManager.CreateButton("Logout", 610, 20, 830, 50, 50, colorManager.getColor("DarkText"), colorManager.getColor("DarkText"));
 
 
-        var usernameTitle = viewManager.CreateLabel("LinuxTech",22,"Inter Bold", colorManager.getColor("DarkText"),830,50,147,20
+        var usernameTitle = viewManager.CreateLabel("LinuxTech", 22, "Inter Bold", colorManager.getColor("DarkText"), 830, 50, 147, 20
                 , false, false);
 
-        var companyName = viewManager.CreateLabel("Autosell Automóveis",12,"Inter Regular", colorManager.getColor("DarkText"),
-                830, 50,30,44, false, false);
+        var companyName = viewManager.CreateLabel("Autosell Automóveis", 12, "Inter Regular", colorManager.getColor("DarkText"),
+                830, 50, 30, 44, false, false);
 
 
-        var transactionTitle = viewManager.CreateLabel("Ultimas transações",17,"Inter Regular", colorManager.getColor("DarkText"),
+        var transactionTitle = viewManager.CreateLabel("Ultimas transações", 17, "Inter Regular", colorManager.getColor("DarkText"),
                 830,
-                50,32
-                ,95,false,
+                50, 32
+                , 95, false,
                 false);
 
 
         var showTransactionBtn = viewManager.CreateButtonWithImage("src/resources/show.png",
-                48,24,
-                colorManager.getColor("AccentBackgroundColor"), 48,24,297,110, false);
+                48, 24,
+                colorManager.getColor("AccentBackgroundColor"), 48, 24, 297, 110, false);
 
-        var logoutButton = viewManager.CreateButton("Logout",610,20,130,25,18,colorManager.getColor("DarkText"),colorManager.getColor("LightBackground"));
+        var logoutButton = viewManager.CreateButton("Logout", 610, 20, 130, 25, 18, colorManager.getColor("DarkText"), colorManager.getColor("LightBackground"));
 
         panel.add(title);
         panel.add(logoutButton);
@@ -83,19 +81,19 @@ public class DashBoardView extends JFrame
         view.setVisible(true);
     }
 
-    private void InitCustomOptionsPanel(JPanel panel, String selection ){
+    private void InitCustomOptionsPanel(JPanel panel, String selection) {
         var firstYBg = 95;
         var firstYLabel = 112;
         if ("Gestão de Veículo".equals(selection) || selection == null) {
             var options = uImodels.getGestaoVeiculosOptions();
-            for (String option: options) {
+            for (String option : options) {
                 var optionBtn = viewManager.CreateButtonWithImage("src/resources/buttonLargeWhite.png",
-                        388,83,
-                        colorManager.getColor("AccentBackgroundColor"), 388,84,408,firstYBg, false);
-                var optionLabel =  viewManager.CreateLabel(option,15,"Inter Medium", colorManager.getColor("LightText"),
+                        388, 83,
+                        colorManager.getColor("AccentBackgroundColor"), 388, 84, 408, firstYBg, false);
+                var optionLabel = viewManager.CreateLabel(option, 15, "Inter Medium", colorManager.getColor("LightText"),
                         830,
-                        50,435
-                        ,firstYLabel,false,
+                        50, 435
+                        , firstYLabel, false,
                         false);
                 panel.add(optionLabel);
                 panel.add(optionBtn);
@@ -111,6 +109,7 @@ public class DashBoardView extends JFrame
                         optionBtn.setIcon(imageIcon);
                         optionLabel.setForeground(colorManager.getColor("LightBackground"));
                     }
+
                     public void mouseExited(java.awt.event.MouseEvent evt) {
                         var imageIcon = new ImageIcon("src/resources/buttonLargeWhite.png");
                         Image buttonImg = imageIcon.getImage().getScaledInstance(388, 84,
@@ -121,10 +120,9 @@ public class DashBoardView extends JFrame
 
                     }
                 });
-                optionBtn.addActionListener(new ActionListener()
-                {
+                optionBtn.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
-                        switch (option){
+                        switch (option) {
                             case "Adicionar Veículo":
                                 dispose();
                                 new AddVehicleView().setVisible(true);
@@ -156,14 +154,14 @@ public class DashBoardView extends JFrame
         }
         if ("Gestão de Peças".equals(selection)) {
             var options = uImodels.getGestaoPeçasOptions();
-            for (String option: options) {
+            for (String option : options) {
                 var optionBtn = viewManager.CreateButtonWithImage("src/resources/buttonLargeWhite.png",
-                        388,83,
-                        colorManager.getColor("AccentBackgroundColor"), 388,84,408,firstYBg, false);
-                var optionLabel =  viewManager.CreateLabel(option,15,"Inter Medium", colorManager.getColor("LightText"),
+                        388, 83,
+                        colorManager.getColor("AccentBackgroundColor"), 388, 84, 408, firstYBg, false);
+                var optionLabel = viewManager.CreateLabel(option, 15, "Inter Medium", colorManager.getColor("LightText"),
                         830,
-                        50,435
-                        ,firstYLabel,false,
+                        50, 435
+                        , firstYLabel, false,
                         false);
                 panel.add(optionLabel);
                 panel.add(optionBtn);
@@ -173,31 +171,46 @@ public class DashBoardView extends JFrame
         }
         if ("Gestão de Eventos".equals(selection)) {
             var options = uImodels.getGestaoEventosOptions();
-            for (String option: options) {
+            for (String option : options) {
                 var optionBtn = viewManager.CreateButtonWithImage("src/resources/buttonLargeWhite.png",
-                        388,83,
-                        colorManager.getColor("AccentBackgroundColor"), 388,84,408,firstYBg, false);
-                var optionLabel =  viewManager.CreateLabel(option,15,"Inter Medium", colorManager.getColor("LightText"),
+                        388, 83,
+                        colorManager.getColor("AccentBackgroundColor"), 388, 84, 408, firstYBg, false);
+                var optionLabel = viewManager.CreateLabel(option, 15, "Inter Medium", colorManager.getColor("LightText"),
                         830,
-                        50,435
-                        ,firstYLabel,false,
+                        50, 435
+                        , firstYLabel, false,
                         false);
                 panel.add(optionLabel);
                 panel.add(optionBtn);
                 firstYBg = firstYBg + 103;
                 firstYLabel = firstYLabel + 103;
+
+                optionBtn.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        switch (option) {
+                            case "Adicionar Evento":
+                                dispose();
+                                new AddEventView().setVisible(true);
+                                break;
+                            case "Alterar Evento":
+                                dispose();
+                                new ChangeEventView().setVisible(true);
+                                break;
+                        }
+                    }
+                });
             }
         }
         if ("Gestão de Clientes".equals(selection)) {
             var options = uImodels.getGestaoClientesOptions();
-            for (String option: options) {
+            for (String option : options) {
                 var optionBtn = viewManager.CreateButtonWithImage("src/resources/buttonLargeWhite.png",
-                        388,83,
-                        colorManager.getColor("AccentBackgroundColor"), 388,84,408,firstYBg, false);
-                var optionLabel =  viewManager.CreateLabel(option,15,"Inter Medium", colorManager.getColor("LightText"),
+                        388, 83,
+                        colorManager.getColor("AccentBackgroundColor"), 388, 84, 408, firstYBg, false);
+                var optionLabel = viewManager.CreateLabel(option, 15, "Inter Medium", colorManager.getColor("LightText"),
                         830,
-                        50,435
-                        ,firstYLabel,false,
+                        50, 435
+                        , firstYLabel, false,
                         false);
                 panel.add(optionLabel);
                 panel.add(optionBtn);
@@ -211,22 +224,22 @@ public class DashBoardView extends JFrame
         var options = uImodels.getOptionsButton();
 
         var optionBG = viewManager.CreateButtonWithImage("src/resources/optionsBG.png",
-                353,292,
-                colorManager.getColor("AccentBackgroundColor"), 352,293,28,404, false);
+                353, 292,
+                colorManager.getColor("AccentBackgroundColor"), 352, 293, 28, 404, false);
 
-        for (DashboardOptions option: options) {
-            var Btn = viewManager.CreateButtonWithImage(option.isSelected() ? "src/resources/buttonBGBlack.png" : "src/resources/buttonBGGrey.png" ,
-                    164,133,
-                    colorManager.getColor("AccentBackgroundColor"), 164,133,option.getxBG(),option.getyBG(), false);
+        for (DashboardOptions option : options) {
+            var Btn = viewManager.CreateButtonWithImage(option.isSelected() ? "src/resources/buttonBGBlack.png" : "src/resources/buttonBGGrey.png",
+                    164, 133,
+                    colorManager.getColor("AccentBackgroundColor"), 164, 133, option.getxBG(), option.getyBG(), false);
 
             var Img = viewManager.CreateButtonWithImage(option.getIcon(),
-                    20,20,
-                    colorManager.getColor("AccentBackgroundColor"), 20,20,option.getxImg(),option.getyImg(), false);
+                    20, 20,
+                    colorManager.getColor("AccentBackgroundColor"), 20, 20, option.getxImg(), option.getyImg(), false);
 
-            var Label = viewManager.CreateLabel(option.getName(),13,"Inter Light", colorManager.getColor("DarkText"),
+            var Label = viewManager.CreateLabel(option.getName(), 13, "Inter Light", colorManager.getColor("DarkText"),
                     830,
-                    50,option.getxLbl()
-                    ,option.getyLbl(),false,
+                    50, option.getxLbl()
+                    , option.getyLbl(), false,
                     false);
 
             // EFFECTS
@@ -238,6 +251,7 @@ public class DashBoardView extends JFrame
                     imageIcon.setImage(buttonImg);
                     Btn.setIcon(imageIcon);
                 }
+
                 public void mouseExited(java.awt.event.MouseEvent evt) {
                     var imageIcon = new ImageIcon(option.isSelected() ? "src/resources/buttonBGBlack.png" : "src" +
                             "/resources/buttonBGGrey.png");
@@ -252,7 +266,7 @@ public class DashBoardView extends JFrame
                 public void actionPerformed(ActionEvent e) {
                     ChangeCustomOptionsPanel(panel, option.getName());
                 }
-            } );
+            });
 
             panel.add(Img);
             panel.add(Label);
@@ -281,15 +295,13 @@ public class DashBoardView extends JFrame
 
             panel.add(img);
             panel.add(label);
-            firstYIcon = firstYIcon +40;
+            firstYIcon = firstYIcon + 40;
             firstYLabel = firstYLabel + 40;
         }
     }
 
 
-
-    public static void main(String [] args)
-    {
+    public static void main(String[] args) {
         dashBoardView = new DashBoardView(null);
         dashBoardView.setVisible(true);
     }

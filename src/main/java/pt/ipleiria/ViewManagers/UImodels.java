@@ -29,7 +29,7 @@ public class UImodels {
 
     public LinkedList<String> getGestaoEventosOptions() {
         var GestaoEventosOptions = new LinkedList<String>();
-        GestaoEventosOptions.add("Registar novo Evento");
+        GestaoEventosOptions.add("Adicionar Evento");
         GestaoEventosOptions.add("Alterar Evento");
         GestaoEventosOptions.add("Cancelar Evento ");
         GestaoEventosOptions.add("Mostrar Vendas por Evento ");
