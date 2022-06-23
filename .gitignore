@@ -2,3 +2,7 @@
 /target/*
 target/
 target/*
+/target/classes
+/target/classes/
+target/classes
+target/classes/
