@@ -76,6 +76,13 @@ public class AddVehicleView  extends JFrame {
 
         modelField.setBorder(BorderFactory.createCompoundBorder(modelField.getBorder(),BorderFactory.createEmptyBorder(5, 10, 5, 5)));
 
+        var conditionFieldDefaultText = viewManager.CreateLabel("Condição",13, "Inter Light",
+                colorManager.getColor("GreyText"),250,35,140,475,false,false);
+
+        var conditionField = viewManager.CreateTextField(null,15,13,colorManager.getColor("DarkText"),colorManager.getColor("LightBackground"),120,515,220,35,false);
+
+        conditionField.setBorder(BorderFactory.createCompoundBorder(conditionField.getBorder(),BorderFactory.createEmptyBorder(5, 10, 5, 5)));
+
 
         var colorFieldDefaultText = viewManager.CreateLabel("Cor",13, "Inter Light",
                 colorManager.getColor("GreyText"),250,35,440,155,false,false);
@@ -92,25 +99,33 @@ public class AddVehicleView  extends JFrame {
         kilometersField.setBorder(BorderFactory.createCompoundBorder(kilometersField.getBorder(),BorderFactory.createEmptyBorder(5, 10, 5, 5)));
 
         var yearFieldDefaultText = viewManager.CreateLabel("Ano",13, "Inter Light",
-                colorManager.getColor("GreyText"),250,35,440,155,false,false);
+                colorManager.getColor("GreyText"),250,35,440,315,false,false);
 
-        var yearField = viewManager.CreateTextField(null,15,13,colorManager.getColor("DarkText"),colorManager.getColor("LightBackground"),420,195,220,35,false);
+        var yearField = viewManager.CreateTextField(null,15,13,colorManager.getColor("DarkText"),colorManager.getColor("LightBackground"),420,355,220,35,false);
 
         yearField.setBorder(BorderFactory.createCompoundBorder(yearField.getBorder(),BorderFactory.createEmptyBorder(5, 10, 5, 5)));
 
-        var inspectionDateDefaultText = viewManager.CreateLabel("Data Inspeção",13, "Inter Light",
-                colorManager.getColor("GreyText"),250,35,440,235,false,false);
+        var inspectionDateFieldDefaultText = viewManager.CreateLabel("Data Inspeção",13, "Inter Light",
+                colorManager.getColor("GreyText"),250,35,440,395,false,false);
 
-        var inspectionDateField = viewManager.CreateTextField(null,15,13,colorManager.getColor("DarkText"),colorManager.getColor("LightBackground"),420,275,220,35,false);
+        var inspectionDateField = viewManager.CreateTextField(null,15,13,colorManager.getColor("DarkText"),colorManager.getColor("LightBackground"),420,435,220,35,false);
 
         inspectionDateField.setBorder(BorderFactory.createCompoundBorder(inspectionDateField.getBorder(),BorderFactory.createEmptyBorder(5, 10, 5, 5)));
 
 
+        var valueFieldDefaultText = viewManager.CreateLabel("Valor",13, "Inter Light",
+                colorManager.getColor("GreyText"),250,35,440,475,false,false);
+
+        var valueField = viewManager.CreateTextField(null,15,13,colorManager.getColor("DarkText"),colorManager.getColor("LightBackground"),420,515,220,35,false);
+
+        valueField.setBorder(BorderFactory.createCompoundBorder(valueField.getBorder(),BorderFactory.createEmptyBorder(5, 10, 5, 5)));
 
 
-        var cancelButton = viewManager.CreateButton("Cancelar",0,525,230,50,13,colorManager.getColor("DarkText"),colorManager.getColor("LightBackground"));
 
-        var deleteButton = viewManager.CreateButton("Gravar",230,525,230,50,13,colorManager.getColor("DarkText"),colorManager.getColor("LightBackground"));
+
+        var cancelButton = viewManager.CreateButton("Cancelar",120,595,230,50,13,colorManager.getColor("DarkText"),colorManager.getColor("LightBackground"));
+
+        var deleteButton = viewManager.CreateButton("Gravar",360,595,230,50,13,colorManager.getColor("DarkText"),colorManager.getColor("LightBackground"));
 
         panel.add(cancelButton);
         panel.add(deleteButton);
@@ -129,6 +144,14 @@ public class AddVehicleView  extends JFrame {
         panel.add(colorFieldDefaultText);
         panel.add(kilometersField);
         panel.add(kilometersFieldDefaultText);
+        panel.add(yearField);
+        panel.add(yearFieldDefaultText);
+        panel.add(inspectionDateField);
+        panel.add(inspectionDateFieldDefaultText);
+        panel.add(conditionField);
+        panel.add(conditionFieldDefaultText);
+        panel.add(valueField);
+        panel.add(valueFieldDefaultText);
         panel.add(companyName);
         panel.add(currentOptionTitle);
 
