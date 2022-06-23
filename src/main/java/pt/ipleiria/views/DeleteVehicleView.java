@@ -48,7 +48,7 @@ public class DeleteVehicleView extends JFrame {
                 830, 50, 30, 44, false, false);
 
         var vinFieldDefaultText = viewManager.CreateLabel("VIN",13, "Inter Light",
-                colorManager.getColor("GreyText"),250,35,140,225,false,false);
+                colorManager.getColor("GreyText"),250,35,140,185,false,false);
 
         var vinField = viewManager.CreateTextField(null,15,13,colorManager.getColor("DarkText"),colorManager.getColor("LightBackground"),120,225,220,35,false);
 
