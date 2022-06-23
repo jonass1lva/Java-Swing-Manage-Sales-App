@@ -40,8 +40,8 @@ public class UImodels {
 
     public LinkedList<String> getGestaoClientesOptions() {
         var GestaoClientesOptions = new LinkedList<String>();
-        GestaoClientesOptions.add("Registar novo Cliente");
-        GestaoClientesOptions.add("Alterar Dados de Cliente");
+        GestaoClientesOptions.add("Adicionar Cliente");
+        GestaoClientesOptions.add("Alterar Cliente");
         GestaoClientesOptions.add("Eliminar Cliente");
         GestaoClientesOptions.add("Mostrar Histórico Cliente");
         GestaoClientesOptions.add("Clientes com Maior Venda");
