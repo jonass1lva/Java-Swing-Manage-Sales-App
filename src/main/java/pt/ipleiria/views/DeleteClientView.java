@@ -39,7 +39,7 @@ public class DeleteClientView extends JFrame {
     private void InitMainPanel(JPanel panel) {
         var title = viewManager.CreateLabel("Bem Vindo", 22, "Inter Light", colorManager.getColor("DarkText"), 830, 50, 30, 20, false,
                 false);
-        var currentOptionTitle = viewManager.CreateLabel("Apagar Veículos", 22, "Inter Light", colorManager.getColor("DarkText"), 830, 50, 410, 20, false, false);
+        var currentOptionTitle = viewManager.CreateLabel("Apagar Cliente", 22, "Inter Light", colorManager.getColor("DarkText"), 830, 50, 410, 20, false, false);
 
         var logoutButton = viewManager.CreateButton("Logout", 650, 32, 100, 30, 20, colorManager.getColor("DarkText"), colorManager.getColor("LightBackground"));
 
