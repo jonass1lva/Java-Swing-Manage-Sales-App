@@ -129,9 +129,9 @@ public class DashBoardView extends JFrame {
                                 dispose();
                                 new AddVehicleView().setVisible(true);
                                 break;
-                            case "Alterar Veículo":
+                            case "Ficha Veículo":
                                 dispose();
-                                new ChangeVehicleView().setVisible(true);
+                                new VinAskView().setVisible(true);
                                 break;
                             case "Eliminar Veículo":
                                 dispose();
