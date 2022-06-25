@@ -17,6 +17,7 @@ public class UImodels {
         var GestaoPeçasOptions = new LinkedList<String>();
         GestaoPeçasOptions.add("Adicionar Peça");
         GestaoPeçasOptions.add("Ficha Peça");
+        GestaoPeçasOptions.add("Ver Stock Peça");
         GestaoPeçasOptions.add("Registar uso de Peça Manutenção");
         GestaoPeçasOptions.add("Registar Aquisição de Peça");
         GestaoPeçasOptions.add("Transferir Peça");
