@@ -116,7 +116,7 @@ public class AddVehicleView  extends JFrame {
         inspectionDateField.setBorder(BorderFactory.createCompoundBorder(inspectionDateField.getBorder(),BorderFactory.createEmptyBorder(5, 10, 5, 5)));
 
 
-        var valueFieldDefaultText = viewManager.CreateLabel("Valor",13, "Inter Light",
+        var valueFieldDefaultText = viewManager.CreateLabel("Valor no site",13, "Inter Light",
                 colorManager.getColor("GreyText"),250,35,440,475,false,false);
 
         var valueField = viewManager.CreateTextField(null,15,13,colorManager.getColor("DarkText"),colorManager.getColor("LightBackground"),420,515,220,35,false);

@@ -10,6 +10,8 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+//todo apagar esta página
+
 public class DeleteVehicleView extends JFrame {
     FontManager fontManager;
     ColorManager colorManager;

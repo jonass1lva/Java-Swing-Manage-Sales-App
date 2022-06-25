@@ -87,11 +87,8 @@ public class VinAskView extends JFrame {
                     return;
                 }
                 else{
-                    //Storage.getInstance().getVehicleManager().deleteVehicle(vinField.getText());
-                    JOptionPane.showMessageDialog(null, "Veículo apagado" );
-
                     dispose();
-                    new DashBoardView(null).setVisible(true);
+                    new VehiclePageView(Storage.getInstance().getVehicleManager().getVehicle(vinField.getText())).setVisible(true);
 
                     //todo tirar isto
                     Storage.getInstance().getVehicleManager().printVehicles();
