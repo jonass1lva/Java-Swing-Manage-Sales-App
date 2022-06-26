@@ -173,9 +173,9 @@ public class DashBoardView extends JFrame {
                                 dispose();
                                 new AddPartView().setVisible(true);
                                 break;
-                            case "Alterar Peça":
+                            case "Ficha Peça":
                                 dispose();
-                                new ChangePartView().setVisible(true);
+                                new PartAskView().setVisible(true);
                                 break;
                         }
                     }
@@ -206,9 +206,9 @@ public class DashBoardView extends JFrame {
                                 dispose();
                                 new AddEventView().setVisible(true);
                                 break;
-                            case "Alterar Evento":
+                            case "Visualizar Evento":
                                 dispose();
-                                new ChangeEventView().setVisible(true);
+                                new EventAskView().setVisible(true);
                                 break;
                         }
                     }
@@ -238,13 +238,9 @@ public class DashBoardView extends JFrame {
                                 dispose();
                                 new AddClientView().setVisible(true);
                                 break;
-                            case "Alterar Cliente":
+                            case "Ficha Cliente":
                                 dispose();
-                                new ChangeClientView().setVisible(true);
-                                break;
-                            case "Eliminar Cliente":
-                                dispose();
-                                new DeleteClientView().setVisible(true);
+                                new NifAskView().setVisible(true);
                                 break;
                         }
                     }
