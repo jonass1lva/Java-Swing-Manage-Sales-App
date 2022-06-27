@@ -38,7 +38,7 @@ public class NifAskView extends JFrame {
     private void InitMainPanel(JPanel panel) {
         var title = viewManager.CreateLabel("Bem Vindo", 22, "Inter Light", colorManager.getColor("DarkText"), 830, 50, 30, 20, false,
                 false);
-        var currentOptionTitle = viewManager.CreateLabel("Apagar Veículos", 22, "Inter Light", colorManager.getColor("DarkText"), 830, 50, 410, 20, false, false);
+        var currentOptionTitle = viewManager.CreateLabel("Ficha Cliente", 22, "Inter Light", colorManager.getColor("DarkText"), 830, 50, 410, 20, false, false);
 
         var logoutButton = viewManager.CreateButton("Logout", 650, 32, 100, 30, 20, colorManager.getColor("DarkText"), colorManager.getColor("LightBackground"));
 
@@ -49,7 +49,7 @@ public class NifAskView extends JFrame {
         var companyName = viewManager.CreateLabel("Autosell Automóveis", 12, "Inter Regular", colorManager.getColor("DarkText"),
                 830, 50, 30, 44, false, false);
 
-        var nifFieldDefaultText = viewManager.CreateLabel("VIN",13, "Inter Light",
+        var nifFieldDefaultText = viewManager.CreateLabel("NIF",13, "Inter Light",
                 colorManager.getColor("GreyText"),250,35,140,185,false,false);
 
         var nifField = viewManager.CreateTextField(null,15,13,colorManager.getColor("DarkText"),colorManager.getColor("LightBackground"),120,225,220,35,false);
@@ -59,7 +59,7 @@ public class NifAskView extends JFrame {
 
         var cancelButton = viewManager.CreateButton("Cancelar",0,380,230,50,13,colorManager.getColor("DarkText"),colorManager.getColor("LightBackground"));
 
-        var deleteButton = viewManager.CreateButton("Go To Page",230,380,230,50,13,colorManager.getColor("DarkText"),colorManager.getColor("LightBackground"));
+        var deleteButton = viewManager.CreateButton("Ir para a ficha",230,380,230,50,13,colorManager.getColor("DarkText"),colorManager.getColor("LightBackground"));
 
         panel.add(cancelButton);
         panel.add(deleteButton);

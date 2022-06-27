@@ -48,13 +48,13 @@ public class VinAskView extends JFrame {
     }
 
     private void InitMainPanel(JPanel panel) {
-        var title = viewManager.CreateLabel("Introduz o Vin", 22, "Inter Light", colorManager.getColor("DarkText"), 350, 50, 0, 20, false,
+        var title = viewManager.CreateLabel("Introduz o Nº de Chassis", 22, "Inter Light", colorManager.getColor("DarkText"), 350, 50, 0, 20, false,
                 true);
 
         var companyName = viewManager.CreateLabel("nº of identification", 12, "Inter Regular", colorManager.getColor("DarkText"),
                 350, 50, 0, 44, false, true);
 
-        var vinFieldDefaultText = viewManager.CreateLabel("VIN",13, "Inter Light",
+        var vinFieldDefaultText = viewManager.CreateLabel("Chassis",13, "Inter Light",
                 colorManager.getColor("GreyText"),350,35,0,150,false,true);
 
         var vinField = viewManager.CreateTextField(null,15,13,colorManager.getColor("DarkText"),colorManager.getColor("LightBackground"),0,185,350,35,true);
@@ -62,9 +62,9 @@ public class VinAskView extends JFrame {
         vinField.setBorder(BorderFactory.createCompoundBorder(vinField.getBorder(),BorderFactory.createEmptyBorder(5, 10, 5, 5)));
 
 
-        var cancelButton = viewManager.CreateButton("Retornar",0,300,175,50,13,colorManager.getColor("DarkText"),colorManager.getColor("LightBackground"));
+        var cancelButton = viewManager.CreateButton("Cancelar",0,300,175,50,13,colorManager.getColor("DarkText"),colorManager.getColor("LightBackground"));
 
-        var goToPageButton = viewManager.CreateButton("Go to page",175,300,175,50,13,colorManager.getColor("DarkText"),colorManager.getColor("LightBackground"));
+        var goToPageButton = viewManager.CreateButton("Ir para a ficha",175,300,175,50,13,colorManager.getColor("DarkText"),colorManager.getColor("LightBackground"));
 
 
         panel.add(cancelButton);
@@ -92,7 +92,7 @@ public class VinAskView extends JFrame {
                 /* reference: https://stackoverflow.com/questions/299606/java-convert-a-char-to-a-charsequence */
                 if (vinField.getText().isEmpty()) return;
                 if (Storage.getInstance().getVehicleManager().getVehicle(vinField.getText())==null){
-                    JOptionPane.showMessageDialog(null, "VIN não registado" );
+                    JOptionPane.showMessageDialog(null, "Chassis não registado" );
                     return;
                 }
                 else{

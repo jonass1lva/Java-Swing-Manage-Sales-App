@@ -83,7 +83,7 @@ public class PartAskView extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 /* reference: https://stackoverflow.com/questions/299606/java-convert-a-char-to-a-charsequence */
                 if (referenceField.getText().isEmpty()) return;
-                if (Storage.getInstance().getVehicleManager().getVehicle(referenceField.getText()) == null) {
+                if (Storage.getInstance().getPartManager().getPart(Integer.parseInt(referenceField.getText())) == null) {
                     JOptionPane.showMessageDialog(null, "Referência não registada");
                     return;
                 } else {
