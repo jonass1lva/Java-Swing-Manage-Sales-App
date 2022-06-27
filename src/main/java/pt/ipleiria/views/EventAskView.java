@@ -4,8 +4,8 @@ import pt.ipleiria.ViewManagers.ColorManager;
 import pt.ipleiria.ViewManagers.FontManager;
 import pt.ipleiria.ViewManagers.UImodels;
 import pt.ipleiria.ViewManagers.ViewManager;
-import pt.ipleiria.model.Event;
 import pt.ipleiria.model.Storage;
+import pt.ipleiria.views.gestaoVeiculo.VehiclePageView;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;

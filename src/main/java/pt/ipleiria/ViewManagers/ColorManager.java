@@ -32,5 +32,6 @@ public class ColorManager {
         colors.put("GreyText", new Color(133, 133, 133));
         colors.put("hoverBackground", new Color(30, 30, 30));
         colors.put("hoverColor", new Color(236, 233, 233));
+        colors.put("Red", new Color(128, 63, 63));
     }
 }

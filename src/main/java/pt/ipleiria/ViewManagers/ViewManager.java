@@ -1,5 +1,7 @@
 package pt.ipleiria.ViewManagers;
 
+import pt.ipleiria.model.CarCondition;
+
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
@@ -117,6 +119,23 @@ public class ViewManager {
         return button;
     }
 
+    public JComboBox<?> CreateSelector(
+            int x,
+            int y,
+            int width,
+            int height,
+            Color color,
+            Color background
+    ){
+        var conditionList = new JComboBox<Object>(CarCondition.values());
+        conditionList.setBounds(x,y,width,height);
+        conditionList.setSelectedIndex(4);
+        conditionList.setForeground(color);
+        conditionList.setBackground(background);
+        conditionList.setOpaque(true);
+        conditionList.setBorder(null);
+        return conditionList;
+    }
 
     public JButton CreateButton(
             String text,

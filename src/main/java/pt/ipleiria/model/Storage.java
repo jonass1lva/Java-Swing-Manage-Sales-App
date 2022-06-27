@@ -9,7 +9,6 @@ public class Storage {
     private BranchManager branchManager;
     private PartManager partManager;
     private VehicleManager vehicleManager;
-
     private UserManager userManager;
 
     private Storage() {

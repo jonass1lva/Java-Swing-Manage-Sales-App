@@ -1,7 +1,6 @@
 package pt.ipleiria.model;
 
-import pt.ipleiria.managers.*;
-import pt.ipleiria.views.LoginView;
+import pt.ipleiria.views.login.LoginView;
 
 
 public class Main {
@@ -13,6 +12,4 @@ public class Main {
         loginView = new LoginView();
         loginView.setVisible(true);
     }
-
-
 }

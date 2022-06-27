@@ -57,7 +57,6 @@ public class Client {
         return transactions;
     }
 
-
     @Override
     public String toString() {
         return "Client{" +

@@ -23,6 +23,11 @@ public class UserManager {
         }
         return null;
     }
+
+    public LinkedList<User> getUsers() {
+        return new LinkedList<>(users);
+    }
+
     public boolean verifyUser(String username, CharSequence rawPassword) {
         //TODO: Null pointer exception on wrong credentials
         User user = getUser(username);

@@ -5,18 +5,32 @@ import pt.ipleiria.ViewManagers.FontManager;
 import pt.ipleiria.ViewManagers.UImodels;
 import pt.ipleiria.ViewManagers.ViewManager;
 import pt.ipleiria.model.Storage;
+import pt.ipleiria.views.gestaoVeiculo.VehiclePageView;
+import pt.ipleiria.views.gestaoVeiculo.VehicleTransaction;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Arrays;
+import java.util.Objects;
 
 public class VinAskView extends JFrame {
     FontManager fontManager;
     ColorManager colorManager;
     ViewManager viewManager;
+    private String destination;
     private final UImodels uImodels;
 
     public static VinAskView vinAskView;
+
+    public VinAskView(String destination) {
+        this.destination = destination;
+        uImodels = new UImodels();
+        fontManager = FontManager.getInstance();
+        colorManager = ColorManager.getInstance();
+        viewManager = new ViewManager();
+        InitUI();
+    }
 
     public VinAskView() {
         uImodels = new UImodels();
@@ -27,49 +41,44 @@ public class VinAskView extends JFrame {
     }
 
     private void InitUI() {
-        viewManager.CreateView(this, 830, 750);
-        var panel = viewManager.CreateJpanel(830, 750, colorManager.getColor("BackgroundColor"));
+        viewManager.CreateView(this, 350, 350);
+        var panel = viewManager.CreateJpanel(350, 350, colorManager.getColor("BackgroundColor"));
         add(panel);
         InitMainPanel(panel);
     }
 
     private void InitMainPanel(JPanel panel) {
-        var title = viewManager.CreateLabel("Bem Vindo", 22, "Inter Light", colorManager.getColor("DarkText"), 830, 50, 30, 20, false,
-                false);
-        var currentOptionTitle = viewManager.CreateLabel("Apagar Veículos", 22, "Inter Light", colorManager.getColor("DarkText"), 830, 50, 410, 20, false, false);
+        var title = viewManager.CreateLabel("Introduz o Vin", 22, "Inter Light", colorManager.getColor("DarkText"), 350, 50, 0, 20, false,
+                true);
 
-        var logoutButton = viewManager.CreateButton("Logout", 650, 32, 100, 30, 20, colorManager.getColor("DarkText"), colorManager.getColor("LightBackground"));
-
-
-        var usernameTitle = viewManager.CreateLabel("LinuxTech", 22, "Inter Bold", colorManager.getColor("DarkText"), 830, 50, 147, 20
-                , false, false);
-
-        var companyName = viewManager.CreateLabel("Autosell Automóveis", 12, "Inter Regular", colorManager.getColor("DarkText"),
-                830, 50, 30, 44, false, false);
+        var companyName = viewManager.CreateLabel("nº of identification", 12, "Inter Regular", colorManager.getColor("DarkText"),
+                350, 50, 0, 44, false, true);
 
         var vinFieldDefaultText = viewManager.CreateLabel("VIN",13, "Inter Light",
-                colorManager.getColor("GreyText"),250,35,140,185,false,false);
+                colorManager.getColor("GreyText"),350,35,0,150,false,true);
 
-        var vinField = viewManager.CreateTextField(null,15,13,colorManager.getColor("DarkText"),colorManager.getColor("LightBackground"),120,225,220,35,false);
+        var vinField = viewManager.CreateTextField(null,15,13,colorManager.getColor("DarkText"),colorManager.getColor("LightBackground"),0,185,350,35,true);
 
         vinField.setBorder(BorderFactory.createCompoundBorder(vinField.getBorder(),BorderFactory.createEmptyBorder(5, 10, 5, 5)));
 
 
-        var cancelButton = viewManager.CreateButton("Cancelar",0,380,230,50,13,colorManager.getColor("DarkText"),colorManager.getColor("LightBackground"));
+        var cancelButton = viewManager.CreateButton("Retornar",0,300,175,50,13,colorManager.getColor("DarkText"),colorManager.getColor("LightBackground"));
 
-        var deleteButton = viewManager.CreateButton("Go To Page",230,380,230,50,13,colorManager.getColor("DarkText"),colorManager.getColor("LightBackground"));
+        var goToPageButton = viewManager.CreateButton("Go to page",175,300,175,50,13,colorManager.getColor("DarkText"),colorManager.getColor("LightBackground"));
+
 
         panel.add(cancelButton);
-        panel.add(deleteButton);
+        panel.add(goToPageButton);
         panel.add(title);
-        panel.add(logoutButton);
-        panel.add(usernameTitle);
         panel.add(vinFieldDefaultText);
         panel.add(vinField);
         panel.add(companyName);
-        panel.add(currentOptionTitle);
 
-        logoutButton.addActionListener(e -> System.exit(0));
+        System.out.println(Arrays.toString(Storage.getInstance().getUserManager().getUsers().toArray()));
+
+        viewManager.AddHover(cancelButton, colorManager.getColor("hoverColor"), colorManager.getColor("hoverBackground"), colorManager.getColor("DarkText"), colorManager.getColor("LightBackground"));
+        viewManager.AddHover(goToPageButton, colorManager.getColor("hoverColor"), colorManager.getColor("hoverBackground"), colorManager.getColor("DarkText"), colorManager.getColor("LightBackground"));
+
         cancelButton.addActionListener(new ActionListener()
         {
             public void actionPerformed(ActionEvent e) {
@@ -77,7 +86,7 @@ public class VinAskView extends JFrame {
                 new DashBoardView(null).setVisible(true);
             }
         });
-        deleteButton.addActionListener(new ActionListener()
+        goToPageButton.addActionListener(new ActionListener()
         {
             public void actionPerformed(ActionEvent e) {
                 /* reference: https://stackoverflow.com/questions/299606/java-convert-a-char-to-a-charsequence */
@@ -88,10 +97,12 @@ public class VinAskView extends JFrame {
                 }
                 else{
                     dispose();
-                    new VehiclePageView(Storage.getInstance().getVehicleManager().getVehicle(vinField.getText())).setVisible(true);
-
-                    //todo tirar isto
-                    Storage.getInstance().getVehicleManager().printVehicles();
+                    if (Objects.equals(destination, "Registar Transação")) {
+                        new VehicleTransaction(Storage.getInstance().getVehicleManager().getVehicle(vinField.getText())).setVisible(true);
+                    } else {
+                        new VehiclePageView(Storage.getInstance().getVehicleManager().getVehicle(vinField.getText())).setVisible(true);
+                        Storage.getInstance().getVehicleManager().printVehicles();
+                    }
                 }
             }
         });

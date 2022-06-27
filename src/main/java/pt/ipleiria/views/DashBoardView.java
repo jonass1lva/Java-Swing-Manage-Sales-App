@@ -1,8 +1,8 @@
 package pt.ipleiria.views;
 
 import pt.ipleiria.ViewManagers.*;
-import pt.ipleiria.model.Storage;
-import pt.ipleiria.model.User;
+import pt.ipleiria.views.gestaoVeiculo.AddVehicleView;
+import pt.ipleiria.views.gestaoVeiculo.VehicleTransaction;
 
 import javax.swing.*;
 import java.awt.*;
@@ -111,7 +111,6 @@ public class DashBoardView extends JFrame {
                         optionBtn.setIcon(imageIcon);
                         optionLabel.setForeground(colorManager.getColor("LightBackground"));
                     }
-
                     public void mouseExited(java.awt.event.MouseEvent evt) {
                         var imageIcon = new ImageIcon("src/resources/buttonLargeWhite.png");
                         Image buttonImg = imageIcon.getImage().getScaledInstance(388, 84,
@@ -130,20 +129,9 @@ public class DashBoardView extends JFrame {
                                 new AddVehicleView().setVisible(true);
                                 break;
                             case "Ficha Veículo":
+                            case "Registar Transação":
                                 dispose();
-                                new VinAskView().setVisible(true);
-                                break;
-                            case "Transferir Veículo":
-                                dispose();
-                                new TransferVehicleView().setVisible(true);
-                                break;
-                            case "Registar Compra": //todo se calhar a compra e venda é a mesma merda mas passar um atributo lá para dentro
-                                dispose();
-                                new RegisterPurchaseView().setVisible(true);
-                                break;
-                            case "Registar Venda":
-                                dispose();
-                                new RegisterSaleView().setVisible(true);
+                                new VinAskView("Registar Transação").setVisible(true);
                                 break;
                         }
                     }

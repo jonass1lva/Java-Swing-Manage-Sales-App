@@ -2,7 +2,6 @@ package pt.ipleiria.managers;
 
 import pt.ipleiria.model.Client;
 import pt.ipleiria.model.Main;
-import pt.ipleiria.model.User;
 import pt.ipleiria.model.Vehicle;
 
 import java.util.LinkedList;
@@ -19,6 +18,13 @@ public class ClientManager {
         }
         return null;
     }
+    public Client getClient(String selectedClient) {
+        for( Client client: this.clients){
+            if (Objects.equals(client.getName(), selectedClient)) return client;
+        }
+        return null;
+    }
+
     public void seedClients(int numClients){
         for (int i = 1; i <= numClients; i++) {
             String name = "Cliente" + i;
@@ -32,7 +38,7 @@ public class ClientManager {
         return clients.get((int)(Math.random() * clients.size()));
     }
     public LinkedList<Client> getClients() {
-        return clients;
+        return new LinkedList<>(clients);
     }
     public void printClientes() {
         String stringBuilder = "";

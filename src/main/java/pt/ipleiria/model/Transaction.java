@@ -9,7 +9,6 @@ public abstract class Transaction {
     private final String vin;
     private final Client client; //Possívelmente inútil uma vez que está a ser guardado no cliente de qualquer maneira
 
-
     protected Transaction(Date date, double value, String vin, Client client) {
         this.date = date;
         this.value = value;
